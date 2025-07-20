@@ -68,7 +68,7 @@ export const translations = {
       ctaDesc: 'Join the revolution in convenient snacking and drinking',
       contactUs: 'Contact Us'
     },
-
+    
     // About Page
     about: {
       title: 'About',
@@ -101,7 +101,7 @@ export const translations = {
       ctaTitle: 'Made with Love in Egypt 🇪🇬',
       ctaDesc: 'Our dedicated team works tirelessly to bring you the best products. Every Crownycup is a testament to Egyptian innovation and quality.'
     },
-
+    
     // How It Works Page
     howItWorks: {
       title: 'How Crownycup',
@@ -128,7 +128,7 @@ export const translations = {
       ctaTitle: 'Ready to Try Crownycup?',
       ctaDesc: 'Experience the convenience of our innovative 2-in-1 design'
     },
-
+    
     // Use Cases Page
     useCases: {
       title: 'Crownycup',
@@ -151,7 +151,7 @@ export const translations = {
       ctaTitle: 'Ready for Your Next Adventure?',
       ctaDesc: 'Make every snacking occasion better with Crownycup'
     },
-
+    
     // Gallery Page
     gallery: {
       title: 'Crownycup',
@@ -174,24 +174,12 @@ export const translations = {
       ctaTitle: 'Ready to Experience Crownycup?',
       ctaDesc: 'See for yourself why thousands love our innovative design'
     },
-
+    
     // Contact Page
     contact: {
       title: 'Contact',
       highlight: 'Us',
       subtitle: 'Get in touch with us for orders, questions, or partnerships',
-      formTitle: 'Send us a Message',
-      form: {
-        name: 'Full Name *',
-        email: 'Email Address *',
-        subject: 'Subject *',
-        message: 'Message *',
-        namePlaceholder: 'Your full name',
-        emailPlaceholder: 'your@email.com',
-        subjectPlaceholder: 'What\'s this about?',
-        messagePlaceholder: 'Tell us more about your inquiry...',
-        send: 'Send Message'
-      },
       infoTitle: 'Get in Touch',
       info: {
         email: {
@@ -212,7 +200,7 @@ export const translations = {
       ctaDesc: 'Join thousands of satisfied customers who love Crownycup',
       placeOrder: 'Place Your Order'
     },
-
+    
     // Footer
     footer: {
       description: 'The ultimate 2-in-1 food and drink container. Proudly designed in Egypt for convenience and versatility.',
@@ -222,7 +210,7 @@ export const translations = {
       copyright: '© 2024 Crownycup. All rights reserved.'
     }
   },
-
+  
   ar: {
     // Navigation
     nav: {
@@ -234,7 +222,7 @@ export const translations = {
       contact: 'اتصل بنا',
       orderNow: 'اطلب الآن'
     },
-
+    
     // Home Page
     home: {
       heroTitle: 'الحاوية المثالية',
@@ -292,7 +280,7 @@ export const translations = {
       ctaDesc: 'انضم إلى ثورة الوجبات الخفيفة والشرب المريح',
       contactUs: 'اتصل بنا'
     },
-
+    
     // About Page
     about: {
       title: 'من نحن',
@@ -325,7 +313,7 @@ export const translations = {
       ctaTitle: 'صنع بحب في مصر 🇪🇬',
       ctaDesc: 'فريقنا المخصص يعمل بلا كلل لتقديم أفضل المنتجات لك. كل كرونيكاب هو شاهد على الابتكار والجودة المصرية.'
     },
-
+    
     // How It Works Page
     howItWorks: {
       title: 'كيف يعمل',
@@ -352,7 +340,7 @@ export const translations = {
       ctaTitle: 'مستعد لتجربة كرونيكاب؟',
       ctaDesc: 'اختبر راحة تصميمنا المبتكر 2 في 1'
     },
-
+    
     // Use Cases Page
     useCases: {
       title: 'حالات استخدام',
@@ -375,7 +363,7 @@ export const translations = {
       ctaTitle: 'مستعد لمغامرتك القادمة؟',
       ctaDesc: 'اجعل كل مناسبة تناول وجبات خفيفة أفضل مع كرونيكاب'
     },
-
+    
     // Gallery Page
     gallery: {
       title: 'معرض',
@@ -398,24 +386,12 @@ export const translations = {
       ctaTitle: 'مستعد لتجربة كرونيكاب؟',
       ctaDesc: 'اكتشف بنفسك لماذا يحب الآلاف تصميمنا المبتكر'
     },
-
+    
     // Contact Page
     contact: {
       title: 'اتصل',
       highlight: 'بنا',
       subtitle: 'تواصل معنا للطلبات والأسئلة أو الشراكات',
-      formTitle: 'أرسل لنا رسالة',
-      form: {
-        name: 'الاسم الكامل *',
-        email: 'عنوان البريد الإلكتروني *',
-        subject: 'الموضوع *',
-        message: 'الرسالة *',
-        namePlaceholder: 'اسمك الكامل',
-        emailPlaceholder: 'your@email.com',
-        subjectPlaceholder: 'ما هو الموضوع؟',
-        messagePlaceholder: 'أخبرنا المزيد عن استفسارك...',
-        send: 'إرسال الرسالة'
-      },
       infoTitle: 'تواصل معنا',
       info: {
         email: {
@@ -436,7 +412,7 @@ export const translations = {
       ctaDesc: 'انضم إلى آلاف العملاء الراضين الذين يحبون كرونيكاب',
       placeOrder: 'ضع طلبك'
     },
-
+    
     // Footer
     footer: {
       description: 'الحاوية المثالية 2 في 1 للطعام والشراب. مصممة بفخر في مصر للراحة والتنوع.',

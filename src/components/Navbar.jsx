@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className={`flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-2`}>
               <img
                 src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751591387661-%5Bcompress-image-cyborg%5D%C3%98%C2%A7%C3%99%C2%84%C3%99%C2%84%C3%99%C2%88%C3%98%C2%AC%C3%99%C2%88.png"
                 alt="Crownycup Logo"
@@ -51,7 +51,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors focus-ring ${
                   location.pathname === item.href
                     ? 'text-orange-600 bg-orange-50'
                     : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
@@ -65,18 +65,18 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleOrderNow}
-              className="bg-gradient-to-r from-orange-500 to-green-500 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-shadow"
+              className="bg-gradient-to-r from-orange-500 to-green-500 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-shadow btn-hover-glow focus-ring"
             >
               {getTranslation(language, 'nav.orderNow')}
             </motion.button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className={`md:hidden flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-2`}>
             <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-orange-600 focus:outline-none"
+              className="text-gray-700 hover:text-orange-600 focus:outline-none focus-ring p-2 rounded-md"
             >
               <SafeIcon icon={isOpen ? FiX : FiMenu} className="h-6 w-6" />
             </button>
@@ -89,7 +89,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-white border-t border-gray-200"
+          className="md:hidden bg-white border-t border-gray-200 shadow-lg"
         >
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navigation.map((item) => (
@@ -97,7 +97,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   location.pathname === item.href
                     ? 'text-orange-600 bg-orange-50'
                     : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
@@ -106,9 +106,12 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <button 
-              onClick={handleOrderNow}
-              className="w-full mt-4 bg-gradient-to-r from-orange-500 to-green-500 text-white px-6 py-2 rounded-full font-medium"
+            <button
+              onClick={() => {
+                handleOrderNow();
+                setIsOpen(false);
+              }}
+              className="w-full mt-4 bg-gradient-to-r from-orange-500 to-green-500 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-shadow"
             >
               {getTranslation(language, 'nav.orderNow')}
             </button>

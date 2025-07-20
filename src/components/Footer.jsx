@@ -17,6 +17,10 @@ const Footer = () => {
     { name: getTranslation(language, 'nav.contact'), href: '/contact' },
   ];
 
+  const handlePhoneCall = () => {
+    window.open('tel:+201091980025', '_self');
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -31,7 +35,7 @@ const Footer = () => {
               />
               <span className="text-2xl font-bold">Crownycup</span>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
               {getTranslation(language, 'footer.description')}
             </p>
             <div className={`flex ${isRTL ? 'space-x-reverse' : ''} space-x-4`}>
@@ -39,7 +43,7 @@ const Footer = () => {
                 href="https://www.instagram.com/crownycup/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-orange-500 transition-colors"
+                className="text-gray-400 hover:text-orange-500 transition-colors p-2 rounded-full hover:bg-gray-800"
               >
                 <SafeIcon icon={FiInstagram} className="h-6 w-6" />
               </a>
@@ -47,7 +51,7 @@ const Footer = () => {
                 href="https://www.facebook.com/crownycup.egypt/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-orange-500 transition-colors"
+                className="text-gray-400 hover:text-orange-500 transition-colors p-2 rounded-full hover:bg-gray-800"
               >
                 <SafeIcon icon={FiFacebook} className="h-6 w-6" />
               </a>
@@ -56,13 +60,15 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{getTranslation(language, 'footer.quickLinks')}</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold mb-4 text-orange-500">
+              {getTranslation(language, 'footer.quickLinks')}
+            </h3>
+            <ul className="space-y-3">
               {navigation.map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    to={item.href} 
-                    className="text-gray-300 hover:text-orange-500 transition-colors"
+                  <Link
+                    to={item.href}
+                    className="text-gray-300 hover:text-orange-500 transition-colors hover:underline"
                   >
                     {item.name}
                   </Link>
@@ -73,26 +79,41 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{getTranslation(language, 'footer.contactInfo')}</h3>
-            <div className="space-y-2">
-              <div className={`flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-2`}>
-                <SafeIcon icon={FiMapPin} className="h-5 w-5 text-orange-500" />
+            <h3 className="text-lg font-semibold mb-4 text-orange-500">
+              {getTranslation(language, 'footer.contactInfo')}
+            </h3>
+            <div className="space-y-3">
+              <div className={`flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-3`}>
+                <SafeIcon icon={FiMapPin} className="h-5 w-5 text-orange-500 flex-shrink-0" />
                 <span className="text-gray-300">{getTranslation(language, 'footer.location')}</span>
               </div>
-              <div className={`flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-2`}>
-                <SafeIcon icon={FiMail} className="h-5 w-5 text-orange-500" />
-                <span className="text-gray-300">sales@crownycup.com</span>
+              <div className={`flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-3`}>
+                <SafeIcon icon={FiMail} className="h-5 w-5 text-orange-500 flex-shrink-0" />
+                <a 
+                  href="mailto:sales@crownycup.com"
+                  className="text-gray-300 hover:text-orange-500 transition-colors"
+                >
+                  sales@crownycup.com
+                </a>
               </div>
-              <div className={`flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-2`}>
-                <SafeIcon icon={FiPhone} className="h-5 w-5 text-orange-500" />
-                <span className="text-gray-300">+20 10 91980025</span>
+              <div className={`flex items-center ${isRTL ? 'space-x-reverse' : ''} space-x-3`}>
+                <SafeIcon icon={FiPhone} className="h-5 w-5 text-orange-500 flex-shrink-0" />
+                <button
+                  onClick={handlePhoneCall}
+                  className="text-gray-300 hover:text-orange-500 transition-colors cursor-pointer hover:underline"
+                  dir="ltr"
+                >
+                  +20 10 91980025
+                </button>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-300">{getTranslation(language, 'footer.copyright')}</p>
+          <p className="text-gray-400 text-sm">
+            {getTranslation(language, 'footer.copyright')}
+          </p>
         </div>
       </div>
     </footer>

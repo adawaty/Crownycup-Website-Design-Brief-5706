@@ -12,18 +12,18 @@ const Gallery = () => {
   const images = [
     {
       url: 'https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751590603069-64b2b3c3-7cfb-40b7-973b-c0fb7b8c4d29.jpg',
-      title: 'Crownycup with Popcorn',
-      description: 'Perfect for movie nights and cinema experiences'
+      title: getTranslation(language, 'gallery.images.0.title'),
+      description: getTranslation(language, 'gallery.images.0.desc')
     },
     {
       url: 'https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751590610247-19c9e199-802f-4400-9278-63d7b70976d3.jpg',
-      title: 'Crownycup in Action',
-      description: 'Convenient one-handed operation'
+      title: getTranslation(language, 'gallery.images.1.title'),
+      description: getTranslation(language, 'gallery.images.1.desc')
     },
     {
-      url: 'https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751590623567-%5Bcompress-image-cyborg%5D%C3%98%C2%A7%C3%99%C2%84%C3%99%C2%84%C3%99%C2%88%C3%98%C2%AC%C3%99%C2%88.png',
-      title: 'Crownycup Logo',
-      description: 'Official Crownycup branding'
+      url: 'https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751591387661-%5Bcompress-image-cyborg%5D%C3%98%C2%A7%C3%99%C2%84%C3%99%C2%84%C3%99%C2%88%C3%98%C2%AC%C3%99%C2%88.png',
+      title: getTranslation(language, 'gallery.images.2.title'),
+      description: getTranslation(language, 'gallery.images.2.desc')
     }
   ];
 
@@ -56,9 +56,9 @@ const Gallery = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
             >
-              Crownycup
+              {getTranslation(language, 'gallery.title')}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-green-500">
-                {' '}Gallery
+                {' '}{getTranslation(language, 'gallery.highlight')}
               </span>
             </motion.h1>
             <motion.p
@@ -67,7 +67,7 @@ const Gallery = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Explore our collection of product photos and see Crownycup in action
+              {getTranslation(language, 'gallery.subtitle')}
             </motion.p>
           </div>
         </div>
@@ -142,10 +142,10 @@ const Gallery = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Experience Crownycup?
+              {getTranslation(language, 'gallery.ctaTitle')}
             </h2>
             <p className="text-xl text-white mb-8">
-              See for yourself why thousands love our innovative design
+              {getTranslation(language, 'gallery.ctaDesc')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -153,7 +153,7 @@ const Gallery = () => {
               onClick={handleOrderNow}
               className="bg-white text-orange-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-shadow"
             >
-              Order Now
+              {getTranslation(language, 'nav.orderNow')}
             </motion.button>
           </motion.div>
         </div>

@@ -17,6 +17,10 @@ const Contact = () => {
     window.open(whatsappUrl, '_blank');
   };
 
+  const handlePhoneCall = () => {
+    window.open('tel:+201091980025', '_self');
+  };
+
   return (
     <div className="min-h-screen py-20">
       {/* Hero Section */}
@@ -77,7 +81,13 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {getTranslation(language, 'contact.info.phone.title')}
                 </h3>
-                <p className="text-orange-600 font-medium mb-1">+20 10 91980025</p>
+                <button
+                  onClick={handlePhoneCall}
+                  className="text-orange-600 font-medium mb-1 hover:text-orange-700 transition-colors cursor-pointer"
+                  dir="ltr"
+                >
+                  +20 10 91980025
+                </button>
                 <p className="text-gray-600">{getTranslation(language, 'contact.info.phone.desc')}</p>
               </div>
               

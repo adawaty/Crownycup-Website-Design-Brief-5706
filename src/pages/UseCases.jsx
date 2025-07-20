@@ -6,25 +6,25 @@ import { useLanguage } from '../context/LanguageContext';
 import { getTranslation } from '../translations/translations';
 
 const UseCases = () => {
-  const { language } = useLanguage();
-
+  const { language, isRTL } = useLanguage();
+  
   const useCases = [
     {
       icon: FiFilm,
-      title: 'Cinema Experience',
-      description: 'Perfect for movie theaters. Enjoy your popcorn and soda without missing a moment of the film.',
+      title: getTranslation(language, 'useCases.cases.0.title'),
+      description: getTranslation(language, 'useCases.cases.0.desc'),
       image: 'https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751590603069-64b2b3c3-7cfb-40b7-973b-c0fb7b8c4d29.jpg'
     },
     {
       icon: FiMusic,
-      title: 'Events & Concerts',
-      description: 'Ideal for outdoor concerts, festivals, and live events where convenience is key.',
+      title: getTranslation(language, 'useCases.cases.1.title'),
+      description: getTranslation(language, 'useCases.cases.1.desc'),
       image: 'https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751590610247-19c9e199-802f-4400-9278-63d7b70976d3.jpg'
     },
     {
       icon: FiSun,
-      title: 'Outdoor Activities',
-      description: 'Great for picnics, beach trips, hiking, and any outdoor adventure.',
+      title: getTranslation(language, 'useCases.cases.2.title'),
+      description: getTranslation(language, 'useCases.cases.2.desc'),
       image: 'https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1751590603069-64b2b3c3-7cfb-40b7-973b-c0fb7b8c4d29.jpg'
     }
   ];
@@ -50,9 +50,9 @@ const UseCases = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
             >
-              Crownycup
+              {getTranslation(language, 'useCases.title')}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-green-500">
-                {' '}Use Cases
+                {' '}{getTranslation(language, 'useCases.highlight')}
               </span>
             </motion.h1>
             <motion.p
@@ -61,7 +61,7 @@ const UseCases = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Discover how Crownycup enhances every snacking occasion
+              {getTranslation(language, 'useCases.subtitle')}
             </motion.p>
           </div>
         </div>
@@ -82,8 +82,8 @@ const UseCases = () => {
                 }`}
               >
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-green-500 rounded-full flex items-center justify-center mr-4">
+                  <div className={`flex items-center mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <div className={`w-12 h-12 bg-gradient-to-r from-orange-500 to-green-500 rounded-full flex items-center justify-center ${isRTL ? 'ml-4' : 'mr-4'}`}>
                       <SafeIcon icon={useCase.icon} className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900">{useCase.title}</h3>
@@ -112,10 +112,10 @@ const UseCases = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready for Your Next Adventure?
+              {getTranslation(language, 'useCases.ctaTitle')}
             </h2>
             <p className="text-xl text-white mb-8">
-              Make every snacking occasion better with Crownycup
+              {getTranslation(language, 'useCases.ctaDesc')}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -123,7 +123,7 @@ const UseCases = () => {
               onClick={handleOrderNow}
               className="bg-white text-orange-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-shadow"
             >
-              Order Now
+              {getTranslation(language, 'nav.orderNow')}
             </motion.button>
           </motion.div>
         </div>

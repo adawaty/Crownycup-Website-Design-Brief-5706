@@ -13,10 +13,10 @@ const LanguageSwitcher = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => switchLanguage(language === 'en' ? 'ar' : 'en')}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors"
+        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-orange-50 hover:text-orange-600 transition-colors focus-ring"
       >
-        <SafeIcon icon={FiGlobe} className="h-4 w-4 text-gray-600" />
-        <span className="text-sm font-medium text-gray-700">
+        <SafeIcon icon={FiGlobe} className="h-4 w-4" />
+        <span className="text-sm font-medium">
           {language === 'en' ? 'العربية' : 'English'}
         </span>
       </motion.button>
